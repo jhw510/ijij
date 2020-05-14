@@ -1,0 +1,17 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hihw.web.mappers.PlayerMapper">
+    <select id="selectAll" resultType="com.hihw.web.domains.PlayerDTO">
+   select
+     player_id playerId,
+     player_name playerName,
+     e_player_name ePlayerName,
+     nickName,
+     join_yyyy joinYyyy ,
+     position,
+     back_no backNo,nation,
+     birth_date birthDate,solar,height,weight,team_id teamId
+     from player
+</select>
+</mapper>
