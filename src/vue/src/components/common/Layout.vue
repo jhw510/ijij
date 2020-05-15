@@ -1,28 +1,36 @@
 <template>
     <div id="wrapper">
         <header>
-            <slot name="header" v-bind:title="header"></slot>
+            <slot name="header"
+                  :title="title"
+                  :login="login"
+                  :join="join"
+                  :calculator="계산기"></slot>
         </header>
         <aside id="sidebar">
-        <slot > 로그인</slot>
+            <slot name="sidebar"></slot>
         </aside>
-    <section id="content">
+        <section id="content">
+            <slot name="content" >
 
-    </section>
-    <footer>
-
-
-    </footer>
-
+            </slot>
+        </section>
+        <footer>
+            <slot name="footer" :footer="footer"></slot>
+        </footer>
     </div>
 </template>
 
 <script>
     export default {
         name: "Layout",
-        data:()=>{
-            return{
-                header:"헤더"
+        data(){
+            return {
+                title : '축구정보 시스템',
+                login : '로그인',
+                join : '회원가입',
+                content : '축구 경기 일정 검색',
+                footer : '(사)축구선수협회'
             }
         }
     }
@@ -34,10 +42,12 @@
         padding: 5px;
         width: 960px;
         margin: 20px auto;
+
     }
     header {
         height: 100px;
         padding: 0 15px;
+        background-color: #FFE1938F;
     }
     #content {
         width: 696px;
@@ -88,5 +98,4 @@
     #pagewrap, header, #content, #middle, #sidebar, footer {
         border: solid 1px #ccc;
     }
-
 </style>
