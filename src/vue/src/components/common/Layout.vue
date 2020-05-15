@@ -4,7 +4,7 @@
             <slot name="header" v-bind:title="header"></slot>
         </header>
         <aside id="sidebar">
-        <slot name="side" v-bind:title="side"></slot>
+        <slot > 로그인</slot>
         </aside>
     <section id="content">
 
