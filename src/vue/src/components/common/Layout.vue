@@ -37,7 +37,7 @@
 </script>
 
 <style scoped>
-    /* 전체 구조 */
+    /* 전체 구조   */
     #wrapper {
         padding: 5px;
         width: 960px;
