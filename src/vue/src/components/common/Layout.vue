@@ -26,7 +26,7 @@
         name: "Layout",
         data(){
             return {
-                title : '축구정보 시스템',
+                title : '축구정보시스템',
                 login : '로그인',
                 join : '회원가입',
                 content : '축구 경기 일정 검색',
@@ -37,7 +37,7 @@
 </script>
 
 <style scoped>
-    /* 전체 구조   */
+    /* 전체 구조    */
     #wrapper {
         padding: 5px;
         width: 960px;
