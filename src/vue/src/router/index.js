@@ -9,6 +9,7 @@ import List from '../components/common/List'
 import Search from '../components/common/Search'
 import Update from '../components/common/Update'
 import Delete from '../components/common/Delete'
+import VuexCounter from "../components/common/VuexCounter";
 Vue.use(Router)
 
 export default new Router({
@@ -22,7 +23,8 @@ export default new Router({
         {path:'/search' , component: Search},
         {path:'/update' , component: Update},
         {path:'/delete' , component: Delete},
-        {path:'/counter' , component: Counter}
+        {path:'/counter' , component: Counter},
+        {path:'/vuexCounter' , component: VuexCounter}
 
     ]
 })
