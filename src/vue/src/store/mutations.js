@@ -1,15 +1,9 @@
-export  const  increment = state =>{
-    state.count ++
- state.history.push('increment')
 
+
+
+export  const login = ()=>{
+    alert("로로그인")
 }
-export  const decrement = state =>{
-    state.count--
-    state.history.push('decrement')
-
-}
-
-export  const clear = state =>{
-    state.count =0
-    state.history.push('clear')
+export const join = ()=>{
+    alert("회원가입 눌렀어요")
 }

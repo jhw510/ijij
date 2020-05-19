@@ -10,6 +10,7 @@ import Search from '../components/common/Search'
 import Update from '../components/common/Update'
 import Delete from '../components/common/Delete'
 import VuexCounter from "../components/common/VuexCounter";
+
 Vue.use(Router)
 
 export default new Router({
