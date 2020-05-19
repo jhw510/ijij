@@ -18,6 +18,7 @@
             </template>
             <template #content>
                 <div class="imgcontainer">
+
                     <img src="https://cmail.daum.net/v2/mails/0000000000001Uk/attachments/MjoxLjI6MTM0Njo1NDY4NjppbWFnZS9wbmc6YmFzZTY0OnNzODRvd1kxdGktbURmS19FY3pXYVE/raw/pp2.png" alt="Avatar" class="avatar">
                 </div>
                 <router-view/>

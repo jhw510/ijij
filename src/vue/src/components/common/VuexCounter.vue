@@ -3,15 +3,15 @@
    <div> <h1>카운터:{{count}}</h1></div>
     <button @click="increment">
        <h2>더하기</h2>
-        <img src="https://w7.pngwing.com/pngs/927/174/png-transparent-new-super-mario-bros-wii-new-super-mario-bros-wii-super-paper-mario-mario-heroes-super-mario-bros-sonic-the-hedgehog-thumbnail.png" alt="Avatar" class="avatar">
+        <img src="http://www.mariowiki.com/images/thumb/4/4c/Raccoon_Mario_-_New_Super_Mario_Bros_2.png/220px-Raccoon_Mario_-_New_Super_Mario_Bros_2.png" alt="Avatar" class="avatar">
     </button>
       <button @click="decrement">
        <h2>빼기</h2>
         <img src="https://upload.wikimedia.org/wikipedia/ko/d/d4/%EC%9A%94%EC%8B%9C.png" alt="Avatar" class="avatar">
     </button>
-   <br>
+
       <button @click="clear">
-          <img src="  https://lh3.googleusercontent.com/proxy/0qxozoBeb7UofKQR02VhI8d0Iy34ZAExJG849iq-4b98feClxB-V5btsC3KbRlnYCAT5Ju61K9lOtW1vWXoZn3hlHd8gF8Sf4jrE26usjOuUVsgqcd4VQ7PB5BIC-sdSvqMuiGBRITbn-XPDp2P6LbTw2MiHE_vCdLN0Z6Rjof6Jl-x9Y3oyf2EroxOgNm4g7b0Mu1MG_MAEcdde_2-ik9yCmf-T3l0lKwQGP3LROKngLQOwvAPcyA0mX3YZqHn6yVjwp0RjMtfKmkm8f-Rt9-DFrvyG9y8pUbI" alt="Avatar" class="avatar">
+          <img src="https://vignette4.wikia.nocookie.net/mario/images/0/0c/MegaMushroomUTSM.png" alt="Avatar" class="avatar">
          <h2>지우기</h2>
       </button>
       <br>
