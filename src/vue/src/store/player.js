@@ -21,7 +21,7 @@ const getters = {
 }
 export  default {
     name : 'player',
-    namespaced : true,
+    namespace : true,
     state,
     actions,
     mutations,
