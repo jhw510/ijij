@@ -23,7 +23,7 @@ public class PlayerController {
             @PathVariable String  playerId,
             @RequestBody PlayerDTO player
     ){
-        System.out.println("뷰와 연결이 성공 !!! 아이디는 "+ playerId);
+        System.out.println("뷰와 연결이 성공 !!!   아이디는 "+ playerId);
         return player;
     }
 }
