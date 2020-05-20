@@ -11,3 +11,4 @@ public class PlayerDTO {
     public String playerId,playerName,ePlayerName,nickName,joinYyyy
             ,position,backNo,nation,birthDate,solar,height,weight,teamId;
 }
+

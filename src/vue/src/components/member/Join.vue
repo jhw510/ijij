@@ -1,14 +1,14 @@
 <template>
     <div>
-        <h2>회원 가입</h2>
+        <h2>선수들 회원 가입</h2>
         <form method="post">
             <div class="container">
                 <label ></label>
-                <input type="text"  v-model="userid" placeholder="Enter Username" name="userid" required>
-                <h3>입력한 아이디 : {{userid}}</h3>
+                <input type="text"  v-model="playerId" placeholder="Enter 플레이어 아이디" name="playerId" required>
+                <h3>입력한 플레이어아이디 : {{playerId}}</h3>
                 <label ><b>Password</b></label>
-                <input type="password" v-model="passwd" placeholder="Enter Password" name="password" required>
-                <h3>입력한 비번 : {{passwd}}</h3>
+                <input type="backNo" v-model="passwd" placeholder="Enter 백넘버" name="backNo" required>
+                <h3>입력한 백넘버 : {{backNo}}</h3>
                 <div id='example-3'> 취미
                     <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
                     <label for="jack">Java</label>
@@ -72,8 +72,8 @@
     export default {
         data(){
             return {
-                userid: '',
-                passwd: '',
+                playerId: '',
+                backNo: '',
                 checkedNames: [],
                 picked: '',
                 gita: '',

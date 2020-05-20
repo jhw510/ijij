@@ -2,6 +2,7 @@
 
 
 export  const login = ()=>{
+
     alert("로로그인")
 }
 export const join = ()=>{
