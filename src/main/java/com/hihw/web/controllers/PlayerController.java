@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins="http://localhost:8080", allowedHeaders = "*")
+@CrossOrigin(origins="*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/players")
 public class PlayerController {
@@ -24,6 +24,7 @@ public class PlayerController {
             @RequestBody PlayerDTO player
     ){
         System.out.println("뷰와 연결이 성공 !!!   아이디는 "+ playerId);
+        System.out.println("뷰와 연결이 성공 !!!   비번은 "+ player.getBackNo());
         return player;
     }
 }

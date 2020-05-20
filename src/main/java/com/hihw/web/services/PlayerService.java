@@ -8,4 +8,5 @@ import java.util.List;
 public interface PlayerService {
     public List<PlayerDTO> retrieveAll();
 
+   public List<PlayerDTO> retrieve();
 }
