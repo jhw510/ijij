@@ -8,11 +8,11 @@
         <div class="container">
 
             <label><b>Username</b></label>
-            <input type="text" @kyeup.enter="moveToPasswd" v-model="userid" placeholder="Enter Username" name="userid" required>
-           <h3>입력한 아이디 {{userid}}</h3>
+            <input type="text" @kyeup.enter="moveToPasswd" v-model="playerId" placeholder="Enter Username" name="playerId" required>
+           <h3>입력한플레이어 아이디 {{playerId}}</h3>
             <label><b>Password</b></label>
-            <input type="password" @kyeup.enter="login" v-model="passwd" placeholder="Enter Password" name="password" required>
-            <h3>입력한 비밀번호 {{passwd}}</h3>
+            <input type="password" @kyeup.enter="login" v-model="backNo" placeholder="Enter Password" name="backNo" required>
+            <h3>입력한 백넘버 {{backNo}}</h3>
                 <button  @click="login" type="submit">Login</button>
 
                 <label>
@@ -31,16 +31,16 @@
     export default {
        data(){
            return{
-               userid:'',
-               passwd:''
+               playerId:'',
+               backNo:''
            }
        },
         methods:{
           login(){
-              alert('로그인')
+              this.$store.dispatch('player/login',{playerId:this.playerId,backNo:this.backNo})
           },
             moveToPasswd(){
-                document.getElementById('passwd').focus()
+                document.getElementById('backNo').focus()
             }
         }
     }
