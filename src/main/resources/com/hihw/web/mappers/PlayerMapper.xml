@@ -14,4 +14,33 @@
      birth_date birthDate,solar,height,weight,team_id teamId
      from player
 </select>
+  <select id="login" resultType="com.hihw.web.domains.PlayerDTO"
+  parameterType="com.hihw.web.domains.PlayerDTO">
+     select
+     player_id playerId,
+     player_name playerName,
+     e_player_name ePlayerName,
+     nickName,
+     join_yyyy joinYyyy ,
+     position,
+     back_no backNo,nation,
+     birth_date birthDate,solar,height,weight,team_id teamId
+     from player
+     where player_id like #{playerId} and back_no like #{backNo}
+  </select>
+  <select id="selectOne" resultType="com.hihw.web.domains.PlayerDTO"
+          parameterType="string">
+     select
+     player_id playerId,
+     player_name playerName,
+     e_player_name ePlayerName,
+     nickName,
+     join_yyyy joinYyyy ,
+     position,
+     back_no backNo,nation,
+     birth_date birthDate,solar,height,weight,team_id teamId
+     from player
+     where player_id like #{value}
+  </select>
+
 </mapper>

@@ -5,13 +5,13 @@
                   :title="title"
                   :login="login"
                   :join="join"
-                  :calculator="계산기"></slot>
+                  :mypage="mypage" :logout="logout"></slot>
         </header>
         <aside id="sidebar">
             <slot name="sidebar"></slot>
         </aside>
         <section id="content">
-            <slot name="content" >
+            <slot name="content">
 
             </slot>
         </section>
@@ -26,28 +26,29 @@
         name: "Layout",
         data(){
             return {
-                title : '축구정보시스템',
+                title : '축구정보 시스템',
                 login : '로그인',
                 join : '회원가입',
-                content : '축구 경기 일정 검색',
-                footer : '(사)축구선수협회'
+                footer : '(사)축구선수협회',
+                logout : '로그아웃',
+                mypage : '마이페이지'
             }
+        },
+        methods: {
         }
     }
 </script>
 
 <style scoped>
-    /* 전체 구조    */
+    /* 전체 구조 */
     #wrapper {
         padding: 5px;
         width: 960px;
         margin: 20px auto;
-
     }
     header {
         height: 100px;
         padding: 0 15px;
-        background-color: #FFE1938F;
     }
     #content {
         width: 696px;

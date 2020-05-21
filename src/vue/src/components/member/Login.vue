@@ -46,7 +46,7 @@
                 methods: {
                     login(){
                         alert(this.userid)
-                        this.$store.dispatch('player/login',{playerId: this.userid, backNo: this.passwd})
+                        this.$store.dispatch('player/login',{playerId: '2000003', backNo: '40'})
                     },
                     moveToPasswd(){
                         document.getElementById('passwd').focus()

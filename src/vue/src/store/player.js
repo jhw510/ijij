@@ -1,44 +1,32 @@
 import axios from 'axios'
+import router from '../router'
 const state = {
     context: 'http://localhost:3000/',
     player : {},
     fail : false,
     auth : false
 }
-const mutations = {
-    LOGIN_COMMIT(state, data){
-        state.auth = true
-        state.player = data.player
-        localStorage.setItem('token', data.token)
-        localStorage.setItem('playerId', data.player.playerId)
-        if(data.player.auth === 'USER'){
-            alert('일반 사용자')
-            /*일반 사용자*/
-        }else{
-            alert('관리자')
-            /* 관리자 */
-        }
 
-    },
-    join(){
-        alert("회원가입")
-    }
-}
 const getters = {
 
 }
 const actions = {
-    async login({commit}, payload){
-        const url = state.context + `players/${payload.playerId}/access`
+    async login({commit}, loginData){
+        const url = state.context + `players/${loginData.playerId}/access`
         const headers = {
             authorization: 'JWT fefege..',
             Accept : 'application/json',
             'Content-Type': 'application/json'
         }
-        axios.post(url, payload, headers)
+        axios.post(url, loginData, headers)
             .then(({data})=>{
+               if(data.result){
+                   commit('LOGIN_COMMIT', data)
+               }else{
+                   commit('FAIL_COMMIT')
+               }
                 alert('자바를 다녀옴')
-                commit('LOGIN_COMMIT', data)
+
             })
             .catch(()=>{
                 alert('서버 전송 실패')
@@ -47,6 +35,29 @@ const actions = {
     },
     async join({commit}){
         commit('join')
+    }
+}
+const mutations = {
+    LOGIN_COMMIT(state, data){
+        state.auth = true
+        state.player = data.player
+        localStorage.setItem('token', data.token)
+        localStorage.setItem('playerId', data.player.playerId)
+        if(data.player.teamId === 'K01'){
+            alert('일반 사용자')
+            router.push('/')
+        }else{
+            alert('관리자')
+            /* 관리자 */
+        }
+
+    },
+    FAIL_COMMIT(state){
+       state.fail =true
+
+    },
+    join(){
+        alert("회원가입")
     }
 }
 

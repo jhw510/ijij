@@ -6,7 +6,9 @@ import com.hihw.web.services.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin(origins="*", allowedHeaders = "*")
 @RestController
@@ -19,12 +21,18 @@ public class PlayerController {
         return playerService.retrieve();
     }
     @PostMapping("/{playerId}/access")
-    public PlayerDTO login(
+    public Map<String, Object> login(
             @PathVariable String  playerId,
-            @RequestBody PlayerDTO player
-    ){
-        System.out.println("뷰와 연결이 성공 !!!   아이디는 "+ playerId);
-        System.out.println("뷰와 연결이 성공 !!!   비번은 "+ player.getBackNo());
-        return player;
+            @RequestBody PlayerDTO params){
+        Map<String,Object> map = new HashMap<>();
+        player = playerService.login(params);
+        if(player != null){
+            System.out.println("로그인 정보 "+ player.toString());
+            map.put("result", true);
+        }else{
+            map.put("result", false);
+        }
+        map.put("player", player);
+        return map;
     }
 }
