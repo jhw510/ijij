@@ -1,6 +1,30 @@
 <template>
     <div id="app">
-        <div v-if="auth">
+        <div v-if=auth>
+            <Layout>
+                <template #header="self">
+                    <router-link to="/"><h1 class="title">{{self.title}}</h1></router-link>
+                    <router-link to="/mypage"><span class="join">{{self.mypage}}</span></router-link>
+                    <span @click="logout" class="login">{{self.logout}}</span>
+                </template>
+                <template #sidebar>
+                    <ul class="menu">
+                        <li v-for="i of sidebars" :key="i.menu">
+                            <router-link :to="i.link">{{i.menu}}</router-link>
+                            <!--<a @click="menu(i.menu)">{{i.menu}}</a>-->
+                        </li>
+                    </ul>
+                </template>
+                <template #content>
+                    <router-view/>
+                </template>
+                <template #footer="self" >
+                    <h3 id="footer">{{self.footer}}</h3>
+                </template>
+            </Layout>
+        </div> <!-- v-if END -->
+        <!--로그인 성공화면-->
+        <div v-else>
             <Layout>
                 <template #header="self">
                     <router-link to="/"><h1 class="title">{{self.title}}</h1></router-link>
@@ -10,31 +34,12 @@
                 <template #sidebar>
                     <h3>광고판</h3>
                 </template>
-
-            </Layout>
-        </div> <!-- v-if END -->
-        <!--로그인 성공화면-->
-        <Layout>
-            <template #header="self">
-                <router-link to="/"><h1 class="title">{{self.title}}</h1></router-link>
-                <router-link to="/mypage"><span class="join">{{self.mypage}}</span></router-link>
-                <span @click="logout" class="login">{{self.logout}}</span>
-            </template>
-            <template #sidebar>
-                <ul class="menu">
-                    <li v-for="i of sidebars" :key="i.menu">
-                        <router-link :to="i.link">{{i.menu}}</router-link>
-                        <!--<a @click="menu(i.menu)">{{i.menu}}</a>-->
-                    </li>
-                </ul>
-            </template>
             <template #content>
                 <router-view/>
             </template>
-            <template #footer="self" >
-                <h3 id="footer">{{self.footer}}</h3>
-            </template>
+
         </Layout>
+    </div>
     </div>
 </template>
 
@@ -68,7 +73,8 @@
         },
         methods:{
             logout(){
-                alert('로그아웃')
+                alert('로그아웃 1')
+                this.$store.dispatch('player/logout')
             },
             menu(i){
                 switch (i) {

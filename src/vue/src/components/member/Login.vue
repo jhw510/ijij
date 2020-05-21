@@ -1,9 +1,7 @@
 <template>
    <div>
     <h2>Login Form</h2>
-
-
-        <div class="imgcontainer">
+       <div class="imgcontainer">
             <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
         </div>
         <div class="container">

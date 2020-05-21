@@ -5,7 +5,8 @@
                   :title="title"
                   :login="login"
                   :join="join"
-                  :mypage="mypage" :logout="logout"></slot>
+                  :mypage="mypage"
+                  :logout="logout"></slot>
         </header>
         <aside id="sidebar">
             <slot name="sidebar"></slot>

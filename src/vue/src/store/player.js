@@ -20,18 +20,23 @@ const actions = {
         }
         axios.post(url, loginData, headers)
             .then(({data})=>{
+
                if(data.result){
                    commit('LOGIN_COMMIT', data)
+                   alert('자바를 다녀옴')
                }else{
                    commit('FAIL_COMMIT')
                }
-                alert('자바를 다녀옴')
+
 
             })
             .catch(()=>{
                 alert('서버 전송 실패')
                 state.fail = true
             })
+    },
+    async logout(){
+alert("로그아ㅑ웃")
     },
     async join({commit}){
         commit('join')
@@ -43,7 +48,7 @@ const mutations = {
         state.player = data.player
         localStorage.setItem('token', data.token)
         localStorage.setItem('playerId', data.player.playerId)
-        if(data.player.teamId === 'K01'){
+        if(data.player.teamId !== 'K01'){
             alert('일반 사용자')
             router.push('/')
         }else{
@@ -55,6 +60,12 @@ const mutations = {
     FAIL_COMMIT(state){
        state.fail =true
 
+    },
+    LOGOUT_COMMIT(state){
+        localStorage.clear()
+        state.auth = false
+        state.player= {}
+        router.push('/')
     },
     join(){
         alert("회원가입")
